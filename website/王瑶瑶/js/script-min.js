@@ -1,0 +1,1 @@
+$(function(){$(".link .button").hover(function(){var t=$(this).attr("data-title");$(".tip em").text(t);var i=$(this).offset().left;var a=($(".tip").outerWidth()-$(this).outerWidth())/2;var o=i-a;$(".tip").css({left:o+"px"}).animate({top:180,opacity:1},300)},function(){$(".tip").animate({top:160,opacity:0},300)})});

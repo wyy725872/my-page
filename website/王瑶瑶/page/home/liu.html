@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            padding: 60px;
+            margin: 0 auto;
+            background-color: #eef;
+        }
+        #box{
+        	margin: 0 auto;
+        	width: 30%;
+
+        }
+        #list {
+            list-style: none;
+            width: 400px;
+            border: 1px solid #666666;
+        }
+        li {
+            list-style: none;
+            background: #a7cbff;
+            margin: 10px 0;
+        }
+        textarea {
+            display: block;
+            width: 400px;
+            height: 50px;
+            margin: 10px 0;
+        }
+       img{
+       	width: 50px;
+       	height: 50px;
+       }
+        .comment-box .comment-content .comment-time { color: brown; margin-top: 3px; line-height: 16px; position: relative;}
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            // 获取元素
+            var list = document.getElementById('list');
+            var text = document.getElementById('text');
+            var btn = document.getElementById('btn');
+
+            // 按钮添加点击事件，把输入框的内容显示到留言列表
+            btn.onclick=function(){
+               var val=text.value;
+               if(val=="") alert("请输入内容哦！");
+               else{
+                var li=document.createElement('li');
+                var  lif=list.firstChild;
+                li.className='comment-box clearfix';
+                li.setAttribute('user','self');
+                 var html ='<img class="myhead" src="image/touxiangwo.jpg" alt="">'+
+                    '<div class="comment-content">'+
+                        '<p class="comment-text"><span class="user">我：</span>'+text.value+'</p>'+
+                        '<p class="comment-time">'+
+                            getTime()+
+                            '<a href="javascript:;" class="comment-operate">回复</a></p></div>';
+                li.innerHTML=html;
+                list.insertBefore(li,lif);
+                text.value="";
+                text.focus();
+            }
+        }
+
+            //定义格式化日期函数getTime
+            
+           function getTime() {
+                var date = new Date();
+                var year = date.getFullYear();
+                var month = date.getMonth()+1;
+                var day = date.getDate();
+                var hour = date.getHours();
+                var minutes =date.getMinutes();
+                month = month < 10 ? "0"+ month : month;
+                day = day < 10 ? "0"+ day : day;
+                hour = hour < 10 ? "0"+ hour : hour;
+                minutes = minutes < 10 ? "0"+ minutes : minutes;
+              return year +"-"+month+"-"+day+" "+hour+":"+minutes;
+            }
+ function operateReply(el)
+           {
+               var commentbox = el.parentNode.parentNode.parentNode;  //评论的容器
+               var box = commentbox.parentNode; // 分享的容器
+               var textarea = document.createElement("textarea");
+               var user = commentbox.getElementsByClassName("user")[0];
+               var txt = el.innerHTML;
+               textarea.innerHTML=txt;
+               if(txt =="回复")
+               {
+                   textarea.onfocus();
+                   textarea.value = "回复"+ user.innerHTML;
+                   textarea.onkeyup();
+               }
+               else
+               {
+                   removeNode(commentbox);
+               }
+               
+               
+           }
+                  var textarea = lis[i].getElementsByTagName("textarea")[0];
+             
+            textarea.onfocus = function()
+            {
+            this.parentNode.className = "text-box text-box-on";
+            this.value = this.value =="评论…" ? '' : this.value; 
+            this.onkeyup();
+            }
+            textarea.onblur = function()
+            {
+                var me = this;
+               
+               if(this.value =='')
+               {
+                    timer = setTimeout(function(){
+                     me.parentNode.className = "text-box";
+                     me.value = "评论…";    
+                   },400);
+           
+               }
+            }
+            textarea.onkeyup = function(e)
+            {
+                var len = this.value.length;
+                var parent = this.parentNode;
+                var btn = parent.children[1];
+                var word = parent.children[2];
+                word.innerHTML = len + '/140';
+                if(len ==0 || len > 140)
+                {
+                    btn.className = "btn btn-off";
+               }
+                else {
+                    btn.className = "btn";
+                }
+                
+            }
+}
+    </script>
+</head>
+<body>
+<div id="box">
+<textarea id="text"></textarea>
+<button id="btn">提交</button>
+<ul id="list">
+    <ul class="comment-list">
+						<li class="comment-box clearfix" user="self">
+							<img class="head" src="image/touxiangbai.png" alt=""/>
+							<div class="comment-content">
+								<p class="comment-text">
+									<span class="user">伊莎贝尔：</span>
+									写的太好了。
+								</p>
+								<p class="comment-time">
+									2015-04-09 17:16
+									<a href="javascript:;" class="comment-operate">回复</a>
+								</p>
+							</div>
+						</li>
+					</ul>
+    <ul class="comment-list">
+						<li class="comment-box clearfix" user="self">
+							<img class="head" src="image/touxiang4.jpg" alt=""/>
+							<div class="comment-content">
+								<p class="comment-text">
+									<span class="user">小格：</span>
+									来看看~
+								</p>
+								<p class="comment-time">
+									2015-02-19 14:36
+									<a href="javascript:;" class="comment-operate">回复</a>
+								</p>
+							</div>
+						</li>
+					</ul>
+</ul>
+
+<div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>学习园地</title>
+	<link rel="stylesheet" type="text/css" href="stv.css"/>
+	<script type="text/javascript" src="time.js">
+
+function MM_CheckFlashVersion(reqVerStr,msg){
+  with(navigator){
+    var isIE  = (appVersion.indexOf("MSIE") != -1 && userAgent.indexOf("Opera") == -1);
+    var isWin = (appVersion.toLowerCase().indexOf("win") != -1);
+    if (!isIE || !isWin){  
+      var flashVer = -1;
+      if (plugins && plugins.length > 0){
+        var desc = plugins["Shockwave Flash"] ? plugins["Shockwave Flash"].description : "";
+        desc = plugins["Shockwave Flash 2.0"] ? plugins["Shockwave Flash 2.0"].description : desc;
+        if (desc == "") flashVer = -1;
+        else{
+          var descArr = desc.split(" ");
+          var tempArrMajor = descArr[2].split(".");
+          var verMajor = tempArrMajor[0];
+          var tempArrMinor = (descArr[3] != "") ? descArr[3].split("r") : descArr[4].split("r");
+          var verMinor = (tempArrMinor[1] > 0) ? tempArrMinor[1] : 0;
+          flashVer =  parseFloat(verMajor + "." + verMinor);
+        }
+      }
+      // WebTV has Flash Player 4 or lower -- too low for video
+      else if (userAgent.toLowerCase().indexOf("webtv") != -1) flashVer = 4.0;
+
+      var verArr = reqVerStr.split(",");
+      var reqVer = parseFloat(verArr[0] + "." + verArr[2]);
+  
+      if (flashVer < reqVer){
+        if (confirm(msg))
+          window.location = "http://www.macromedia.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash";
+      }
+    }
+  } 
+}
+</script>
+
+</head>
+<body onLoad="MM_CheckFlashVersion('7,0,0,0','本页内容需要使用较新的 Macromedia Flash Player 版本。是否现在下载它？');">
+	<div class="content1">
+		<div id="show">显示时间的位置</div>
+	</div>
+    	<div class="contet2">
+		<div class="txtshow">距离四级还有<span id="timeShow"></span>天</div>
+	</div>
+	<div id="menu">
+		<ul>
+			<li>
+				<a href="#">我的书库</a>
+				<ul>
+					<li>
+						<a href="pdf.html" target="_blank">Nodejs</a>
+					</li>
+					<li>
+						<a href="pdf1.html "target="_blank">代码规范</a>
+					</li>
+				</ul>
+
+			</li>
+			<li>
+				<a href="#">学习网页</a>
+				<ul>
+					<li>
+						<a href="http:\\www.imooc.com"  target="_blank">
+						慕课网</a>
+					</li>
+					<li>
+						<a href="http://www.w3school.com.cn" target="_blank">
+						w3school</a>
+					</li>
+					<li>
+						<a href="http:\\www.zhihu.com" target="_blank">
+						知乎</a>
+					</li>
+				</ul>
+				<li>
+					<a href="#">视频资料</a>
+					<ul>
+						<li>
+							<a href="./video.html">FLASH</a>
+						</li>
+						<li>
+							<a href="./vvb.html">CSS</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="../../index.html">返回</a>
+					
+				</li>
+			</ul>
+	</div>
+	
+	<!--div><embed class="TV" type="application/x-shockwave-flash" allownetworking="internal"enablecontextmenu="False"  videothumb="http://g1.ykimg.com/0100641F4654265EEEE85B19E58B2EE7665B81-FDEB-2193-3994-B970C02AC55B" videotitle="4html中的列表" videosource="F:\个人网页\王瑶瑶\page\study\实物.WMA" height="294" width="517" loop="false" autostart="false" wmode="opaque" showstatusbar="1" invokeurls="false" allowfullscreen="true" src="F:\个人网页\王瑶瑶\page\study\实物.WMA"/>
+	</div-->
+<!--div><embed  class="TV"src="F:\个人网页\王瑶瑶\page\study\实物.WMA" type="audio/x-pn-realaudio-plugin" 
+
+		console="Clip1" controls="ImageWindow" height="294" width="517" autostart="1"-->
+		<div class="TV">
+  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="517" height="294" id="FLVPlayer">
+    <param name="movie" value="FLVPlayer_Progressive.swf" />
+    <param name="salign" value="lt" />
+    <param name="quality" value="high" />
+    <param name="scale" value="noscale" />
+    <param name="FlashVars" value="&MM_ComponentVersion=1&skinName=Clear_Skin_1&streamName=Flash%E5%8A%A8%E7%94%BB%E5%88%B6%E4%BD%9C%E6%95%99%E7%A8%8B%EF%BC%91_%E6%A0%87%E6%B8%85&autoPlay=false&autoRewind=false" />
+    <embed src="FLVPlayer_Progressive.swf" flashvars="&MM_ComponentVersion=1&skinName=Clear_Skin_1&streamName=Flash%E5%8A%A8%E7%94%BB%E5%88%B6%E4%BD%9C%E6%95%99%E7%A8%8B%EF%BC%91_%E6%A0%87%E6%B8%85&autoPlay=false&autoRewind=false" quality="high" scale="noscale" width="517" height="294" name="FLVPlayer" salign="LT" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />  
+</object>
+</div>
+		<!--video src="F:\个人网页\王瑶瑶\page\study\思念.avi" controls="controls">
+</video-->
+<!--videosource="http://v.youku.com/v_show/id_XNzkxODQyMDY0.html"
+http://player.youku.com/player.php/sid/XNzkxODQyMDY0/partnerid/d50c8689ebe03441/v.swf-->
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>学习园地</title>
+	<link rel="stylesheet" href="style.css"/>
+	<script language="javascript" type="text/javascript">
+	window.onload=function(){
+		showTime();
+	}
+	function checkTime(i){
+		if (i<10) {
+			i="0"+i;
+		}
+		return i;
+	}
+
+	function showTime(){var myDate=new Date();
+		var year=myDate.getFullYear();
+		var month=myDate.getMonth()+1;
+		var date=myDate.getDate();
+		var d=myDate.getDay();//4
+		var h=myDate.getHours();
+		var m=myDate.getMinutes();
+		var s=myDate.getSeconds();
+		m=checkTime(m);
+		s=checkTime(s);
+		//alert(myDate.getDay());//0-6
+		var weekday=new Array(7)
+		weekday[0]="星期日"
+		weekday[1]="星期一"
+		weekday[2]="星期二"
+		weekday[3]="星期三"
+		weekday[4]="星期四"
+		weekday[5]="星期五"
+		weekday[6]="星期六"
+		document.getElementById('show').innerHTML=year+'年'+month+'月'+date+'日'+weekday[d]+h+':'+m+':'+s;
+		setTimeout(showTime,500);
+	}
+</script>
+</head>
+<body>
+<div class="content1">
+	<div id="show">显示时间的位置</div>
+</div>
+<div>
+<object classid="clsid:CA8A9780-280D-11CF-A24D-444553540000"  height="600" width="600" border="0">  
+    <param name="allowFullScreenInteractive" value="true">
+    <param name="_Version" value="65539">  
+    <param name="_ExtentX" value="20108">  
+    <param name="_ExtentY" value="10866">  
+    <param name="_StockProps" value="0">  
+    <param name="SRC" value="超越css.pdf">  
+    <object data="超越css.pdf" type="application/pdf"  height="600" width="600">   
+    </object> 
+</object>
+
+<object classid=”clsid:CA8A9780-280D-11CF-A24D-444553540000” width=”550” height=”620”>
+<param name=”SRC” value=”超越css.pdf” /><embed width=”550” height=”620” fullscreen=”yes” src=”超越css.pdf”><noembed></noembed></embed></object>
+</div> 
+</body>
+</html>
